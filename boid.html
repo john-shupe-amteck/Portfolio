@@ -9,7 +9,7 @@
 <body id="home">
 
     <div id="boids-wrapper">
-        <canvas id="boids"  onmousemove="cnvs_getCoordinates(event)" onclick="drawSquare(event)"></canvas>
+        <canvas id="boids"  onmousemove="cnvs_getCoordinates(event)" onmousedown="drawSquare(event)" onmouseup="stopline(event)"></canvas>
         <div id="boids-controls-container">
             <!-- <div id="mobile-boids-controls">
                 <button id="introversion-mobile">Introversion</button>

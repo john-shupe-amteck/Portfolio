@@ -538,25 +538,21 @@ function cnvs_getCoordinates(e) {
 }
 
 function drawSquare(e) {
-  c.strokeStyle = "#80808010";
-  c.fillStyle =   "#80808010";
+  c.strokeStyle = "#999999";
+  c.lineWidth = 2;
   x=Math.floor((e.clientX  - (spacing/2))/ spacing) + 1;
   y=Math.floor((e.clientY  - (spacing/2))/ spacing) + 1;
   document.getElementById("fps-number").innerHTML="(" + x + "," + y + ")";
-  c.strokeRect((x * spacing) - (spacing / 2), (y * spacing) - (spacing /2), spacing, spacing);
-  c.fillRect  ((x * spacing) - (spacing / 2), (y * spacing) - (spacing /2), spacing, spacing);
-  for (var i = 1; i <= 0; i++) {
-    c.strokeRect(((x) * spacing) - (spacing / 2), ((y + i) * spacing) - (spacing /2), spacing, spacing);
-    c.strokeRect(((x) * spacing) - (spacing / 2), ((y - i) * spacing) - (spacing /2), spacing, spacing);
-    c.strokeRect(((x - i) * spacing) - (spacing / 2), ((y) * spacing) - (spacing /2), spacing, spacing);
-    c.strokeRect(((x + i) * spacing) - (spacing / 2), ((y) * spacing) - (spacing /2), spacing, spacing);
-    for (var l = 1; l <= 0; l++){
-      c.strokeRect(((x + i) * spacing) - (spacing / 2), ((y + l) * spacing) - (spacing /2), spacing, spacing);
-      c.strokeRect(((x - i) * spacing) - (spacing / 2), ((y - l) * spacing) - (spacing /2), spacing, spacing);
-      c.strokeRect(((x - i) * spacing) - (spacing / 2), ((y + l) * spacing) - (spacing /2), spacing, spacing);
-      c.strokeRect(((x + i) * spacing) - (spacing / 2), ((y - l) * spacing) - (spacing /2), spacing, spacing);
-    }
-  }
+  c.beginPath()
+  c.moveTo((x * spacing), (y * spacing));
+}
+
+function stopline(e) {
+  c.lineWidth = 2;
+  x=Math.floor((e.clientX  - (spacing/2))/ spacing) + 1;
+  y=Math.floor((e.clientY  - (spacing/2))/ spacing) + 1;
+  c.lineTo((x * spacing), y * spacing);
+  c.stroke();
 }
 
 drawGrid(spacing);
