@@ -133,9 +133,6 @@ table{
     margin-right: 10px;
     flex-wrap: wrap;
 }
-.boids-control-range label {
-
-}
   
 .range-slider .input-range {
       height: auto;
