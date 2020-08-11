@@ -47,4 +47,17 @@ function connect_dots() {
     }
     endShape();
   }
+
+  for (let x = 0; x < grid_size - 1; x++) {
+    for (let i = 0; i < grid_size - 1; i++) {
+      let q = x * grid_size + i;
+      fill(100);
+      beginShape();
+      vertex(dots[q].x_coord(), dots[q].y_coord());
+      vertex(dots[(grid_size + q)].x_coord(), dots[grid_size + q].y_coord());
+      vertex(dots[(grid_size + q + 1)].x_coord(), dots[grid_size + q + 1].y_coord());
+      vertex(dots[q + 1].x_coord(), dots[q + 1].y_coord());
+      endShape(CLOSE);    
+    }
+  }
 }

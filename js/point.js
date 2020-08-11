@@ -6,7 +6,7 @@ class Point {
   }
 
   update() {
-    this.n += .001;
+    this.n += .003;
   }
 
   display() {
